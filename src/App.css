@@ -1,183 +1,223 @@
-/* Falling hearts */
-body:before {
-  content: '';
+:root {
+  --val-font:
+    ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+    "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+body {
+  font-family: var(--val-font);
+}
+
+/* Page background */
+.home-page {
+  background: radial-gradient(
+    circle at top,
+    #fff1f2 0%,
+    #ffe4e6 35%,
+    #ffffff 85%
+  );
+  color: #0f172a;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Card */
+.home-card {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+/* Typography */
+.home-kicker {
+  color: rgba(15, 23, 42, 0.65);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.home-title {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.home-subtitle {
+  color: rgba(15, 23, 42, 0.65);
+}
+
+.home-from {
+  font-weight: 700;
+  color: rgba(15, 23, 42, 0.85);
+}
+
+.home-footer .home-hint {
+  color: rgba(15, 23, 42, 0.55);
+  font-weight: 600;
+}
+
+/* Buttons */
+.val-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 12rem;
+  padding: 1rem 2.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  box-shadow:
+    0 12px 24px rgba(15, 23, 42, 0.12),
+    0 2px 6px rgba(15, 23, 42, 0.08);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease,
+    filter 200ms ease,
+    background-color 200ms ease,
+    opacity 300ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.val-btn--soft:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.02);
+}
+
+.val-btn:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.val-btn:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 4px rgba(244, 114, 182, 0.25),
+    0 12px 24px rgba(15, 23, 42, 0.12),
+    0 2px 6px rgba(15, 23, 42, 0.08);
+}
+
+/* Colors */
+.val-btn--yes {
+  background: rgba(236, 72, 153, 0.92);
+  color: white;
+  border-color: rgba(190, 24, 93, 0.25);
+}
+
+.val-btn--yes:hover {
+  background: rgba(236, 72, 153, 1);
+}
+
+.val-btn--no {
+  background: rgba(148, 163, 184, 0.95);
+  color: #0f172a;
+}
+
+.val-btn--no:hover {
+  background: rgba(148, 163, 184, 1);
+}
+
+/* Fade-out animation */
+.fade-out {
+  opacity: 0;
+  transform: scale(0.85);
+}
+
+/* Floating hearts */
+.hearts {
   position: absolute;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   pointer-events: none;
-  background-image: url(https://divi.space/wp-content/uploads/2019/02/hearts.png);
-  animation: falling-hearts 8s linear infinite;
 }
-@keyframes falling-hearts {
+
+.heart {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: rgba(244, 114, 182, 0.35);
+  transform: rotate(45deg);
+  border-radius: 4px;
+  animation: floatUp 8s linear infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: rgba(244, 114, 182, 0.35);
+  border-radius: 50%;
+}
+
+.heart::before {
+  left: -9px;
+  top: 0;
+}
+
+.heart::after {
+  left: 0;
+  top: -9px;
+}
+
+.h1 {
+  left: 10%;
+  bottom: -10%;
+  animation-delay: 0s;
+}
+.h2 {
+  left: 28%;
+  bottom: -18%;
+  animation-delay: 1.4s;
+  transform: rotate(45deg) scale(0.85);
+}
+.h3 {
+  left: 52%;
+  bottom: -14%;
+  animation-delay: 0.7s;
+  transform: rotate(45deg) scale(1.05);
+}
+.h4 {
+  left: 74%;
+  bottom: -22%;
+  animation-delay: 2.2s;
+  transform: rotate(45deg) scale(0.75);
+}
+.h5 {
+  left: 90%;
+  bottom: -16%;
+  animation-delay: 1.1s;
+  transform: rotate(45deg) scale(0.95);
+}
+
+@keyframes floatUp {
   0% {
-    background-position: 0% 30%;
-  }
-}
-
-/* Title */
-.white-shadow {
-  text-shadow: rgb(255, 255, 255) 3px 3px 2px;
-}
-
-/* Green button */
-
-/*Bounce Green button*/
-@keyframes kreep {
-  0% {
-    -webkit-transform: scale(1.1, 0.9);
-    transform: scale(1.1, 0.9);
-  }
-  50% {
-    -webkit-transform: scale(0.9, 1.1) translateY(-0.5rem);
-  }
-  70% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-}
-
-h1.kreep {
-  display: inline-block;
-  /*name-duration-function(ease,eas-in,linear)-delay-count-direction */
-  animation: kreep 0.7s ease 2s infinite alternate;
-}
-
-h1.kreep:hover {
-  animation: none;
-}
-
-/*Shaking Red Button*/
-@keyframes wiggle {
-  2% {
-    -webkit-transform: translateX(3px) rotate(2deg);
-    transform: translateX(3px) rotate(2deg);
-  }
-  4% {
-    -webkit-transform: translateX(-3px) rotate(-2deg);
-    transform: translateX(-3px) rotate(-2deg);
-  }
-  6% {
-    -webkit-transform: translateX(3px) rotate(2deg);
-    transform: translateX(3px) rotate(2deg);
-  }
-  8% {
-    -webkit-transform: translateX(-3px) rotate(-2deg);
-    transform: translateX(-3px) rotate(-2deg);
+    transform: translateY(0) rotate(45deg);
+    opacity: 0;
   }
   10% {
-    -webkit-transform: translateX(2px) rotate(1deg);
-    transform: translateX(2px) rotate(1deg);
-  }
-  12% {
-    -webkit-transform: translateX(-2px) rotate(-1deg);
-    transform: translateX(-2px) rotate(-1deg);
-  }
-  14% {
-    -webkit-transform: translateX(2px) rotate(1deg);
-    transform: translateX(2px) rotate(1deg);
-  }
-  16% {
-    -webkit-transform: translateX(-2px) rotate(-1deg);
-    transform: translateX(-2px) rotate(-1deg);
-  }
-  18% {
-    -webkit-transform: translateX(1px) rotate(0);
-    transform: translateX(1px) rotate(0);
-  }
-  20% {
-    -webkit-transform: translateX(-1px) rotate(0);
-    transform: translateX(-1px) rotate(0);
-  }
-}
-
-h1.wiggle {
-  display: inline-block;
-  animation: wiggle 2.7s infinite;
-}
-
-h1.wiggle:hover {
-  animation: none;
-}
-
-.link {
-  display: inline-block;
-  -decoration: none;
-}
-
-.link:hover {
-  text-decoration: none;
-}
-
-/* Green button shake */
-
-@keyframes buzz-out-on-hover {
-  10% {
-    -webkit-transform: translateX(3px) rotate(2deg);
-    transform: translateX(3px) rotate(2deg);
-  }
-  20% {
-    -webkit-transform: translateX(-3px) rotate(-2deg);
-    transform: translateX(-3px) rotate(-2deg);
-  }
-  30% {
-    -webkit-transform: translateX(3px) rotate(2deg);
-    transform: translateX(3px) rotate(2deg);
-  }
-  40% {
-    -webkit-transform: translateX(-3px) rotate(-2deg);
-    transform: translateX(-3px) rotate(-2deg);
-  }
-  50% {
-    -webkit-transform: translateX(2px) rotate(1deg);
-    transform: translateX(2px) rotate(1deg);
-  }
-  60% {
-    -webkit-transform: translateX(-2px) rotate(-1deg);
-    transform: translateX(-2px) rotate(-1deg);
-  }
-  70% {
-    -webkit-transform: translateX(2px) rotate(1deg);
-    transform: translateX(2px) rotate(1deg);
-  }
-  80% {
-    -webkit-transform: translateX(-2px) rotate(-1deg);
-    transform: translateX(-2px) rotate(-1deg);
-  }
-  90% {
-    -webkit-transform: translateX(1px) rotate(0);
-    transform: translateX(1px) rotate(0);
+    opacity: 1;
   }
   100% {
-    -webkit-transform: translateX(-1px) rotate(0);
-    transform: translateX(-1px) rotate(0);
+    transform: translateY(-120vh) rotate(45deg);
+    opacity: 0;
   }
 }
-.buzz-out-on-hover {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-}
-.buzz-out-on-hover:hover,
-.buzz-out-on-hover:focus,
-.buzz-out-on-hover:active {
-  -webkit-animation-name: buzz-out-on-hover;
-  animation-name: buzz-out-on-hover;
-  -webkit-animation-duration: 0.75s;
-  animation-duration: 0.75s;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
+
+/* YES celebration */
+.yay {
+  animation: yayPop 0.6s ease;
 }
 
-/* Polaroid */
-
-.item:hover .polaroid:before {
-  transform: rotate(0deg);
-  transition: all 0.35s;
+@keyframes yayPop {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.15);
+  }
+  70% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1.05);
+  }
 }

@@ -1,9 +1,37 @@
-.red-shadow {
-  text-shadow: rgb(234, 69, 69) 2px 2px 2px;
+/* Softer, elegant look (matches the main page better) */
+.yes-page {
+  background: radial-gradient(circle at top, #fff1f2 0%, #ffe4e6 35%, #ffffff 85%);
+  color: #0f172a;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
 }
 
-/* Envelope */
+.yes-card {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
 
+.yes-title {
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+.yes-subtitle {
+  color: rgba(15, 23, 42, 0.7);
+  line-height: 1.6;
+  max-width: 46rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.yes-label {
+  color: rgba(15, 23, 42, 0.65);
+  font-weight: 600;
+}
+
+/* Envelope (pastel + clean) */
 .top,
 .bottom {
   border-left: 135px solid transparent;
@@ -14,16 +42,16 @@
 }
 
 .top {
-  border-bottom: 120px solid #f75555;
+  border-bottom: 120px solid #f4c7d1; /* soft rose */
   top: -120px;
   transform-origin: bottom;
   z-index: 3;
-  transition: all 0.8s ease;
+  transition: transform 0.7s ease, filter 0.7s ease;
   transform: rotateX(0deg);
 }
 
 .bottom {
-  border-bottom: 120px solid #d81616;
+  border-bottom: 120px solid #eeb1be; /* slightly deeper */
   top: -70px;
   z-index: 4;
 }
@@ -37,13 +65,13 @@
 }
 
 .left {
-  border-left: 135px solid #fe1919;
+  border-left: 135px solid #f2bcc8;
   position: absolute;
   left: 0;
 }
 
 .right {
-  border-right: 135px solid #fe1919;
+  border-right: 135px solid #f2bcc8;
   position: absolute;
   right: 0;
 }
@@ -52,20 +80,29 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  transition: all 1s ease;
   z-index: 3;
-  transition-delay: 0.4s;
-  top: -50%; /* Adjusted for new proportion */
+  top: -50%;
+  transition: top 0.9s ease;
+  transition-delay: 0.25s;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 14px;
 }
 
+/* When the envelope opens (depends on Envelope component toggling .fold) */
 .envelope.fold .back {
   z-index: 3;
-  transition-delay: 0.3s;
   top: 0;
 }
 
 .envelope.fold .top {
-  transition-delay: 0.6s;
+  transition-delay: 0.35s;
   transform: rotateX(180deg);
   z-index: 6;
+  filter: brightness(0.98);
+}
+
+/* Optional: tone down any harsh shadows inside Envelope component */
+.envelope {
+  filter: drop-shadow(0 18px 26px rgba(15, 23, 42, 0.16));
 }

@@ -10,13 +10,21 @@ export type Polroid = {
 // Customize Polaroids location, src and z-index
 
 export const Polaroids: Polroid[] = [
+    {
+    img: '/example-7.webp',
+    top: -2,
+    left: 32,
+    index: 3,
+    rotate: -6,
+    caption: 'Summers',
+  },
   {
     img: '/example-1.webp',
     top: -2,
     left: 1,
     index: 1,
     rotate: -6,
-    caption: 'Light Love',
+    caption: '',
   },
   {
     img: '/example-2.webp',
@@ -24,7 +32,7 @@ export const Polaroids: Polroid[] = [
     left: -1,
     index: 3,
     rotate: 6,
-    caption: 'Sunset',
+    caption: 'Sunsets',
   },
   {
     img: '/example-3.webp',
@@ -32,7 +40,7 @@ export const Polaroids: Polroid[] = [
     left: 1,
     index: 1,
     rotate: -6,
-    caption: 'Vacation',
+    caption: '',
   },
   {
     img: '/example-4.webp',
@@ -40,7 +48,7 @@ export const Polaroids: Polroid[] = [
     left: 17,
     index: 5,
     rotate: 6,
-    caption: 'Anniversary',
+    caption: '',
   },
   {
     img: '/example-5.webp',
@@ -56,23 +64,16 @@ export const Polaroids: Polroid[] = [
     left: 17,
     index: 3,
     rotate: 6,
-    caption: 'London Love',
+    caption: 'Love',
   },
-  {
-    img: '/example-7.webp',
-    top: -2,
-    left: 32,
-    index: 3,
-    rotate: -6,
-    caption: 'Summer vibe',
-  },
+
   {
     img: '/example-8.webp',
     top: 30,
     left: 32,
     index: 1,
     rotate: -6,
-    caption: 'Summer vibe',
+    caption: 'Trust',
   },
   {
     img: '/example-9.webp',
@@ -80,7 +81,7 @@ export const Polaroids: Polroid[] = [
     left: 32,
     index: 1,
     rotate: -6,
-    caption: 'Birthday celebrations',
+    caption: 'Celebrations',
   },
   {
     img: '/example-10.webp',
@@ -88,7 +89,7 @@ export const Polaroids: Polroid[] = [
     left: 48,
     index: 8,
     rotate: 6,
-    caption: 'Dance with me',
+    caption: 'Dance with me?',
   },
   {
     img: '/example-11.webp',
@@ -96,7 +97,7 @@ export const Polaroids: Polroid[] = [
     left: 49,
     index: 1,
     rotate: 6,
-    caption: 'Merry me?',
+    caption: 'Explore',
   },
   {
     img: '/example-12.webp',
@@ -104,7 +105,7 @@ export const Polaroids: Polroid[] = [
     left: 49,
     index: 10,
     rotate: 6,
-    caption: 'Iceland',
+    caption: 'Adventure',
   },
   {
     img: '/example-13.webp',
@@ -112,7 +113,7 @@ export const Polaroids: Polroid[] = [
     left: 65,
     index: 6,
     rotate: -6,
-    caption: 'New York',
+    caption: 'Happiness',
   },
   {
     img: '/example-14.webp',
@@ -120,7 +121,7 @@ export const Polaroids: Polroid[] = [
     left: 67,
     index: 6,
     rotate: -6,
-    caption: 'Antumn',
+    caption: '',
   },
   {
     img: '/example-15.webp',
@@ -128,7 +129,7 @@ export const Polaroids: Polroid[] = [
     left: 67,
     index: 6,
     rotate: 6,
-    caption: 'Yoga Time',
+    caption: 'Quality Time',
   },
   {
     img: '/example-16.webp',
@@ -136,7 +137,7 @@ export const Polaroids: Polroid[] = [
     left: 80,
     index: 10,
     rotate: -6,
-    caption: 'Movie evening',
+    caption: 'Movie night',
   },
   {
     img: '/example-17.webp',
@@ -144,7 +145,7 @@ export const Polaroids: Polroid[] = [
     left: 84,
     index: 2,
     rotate: 6,
-    caption: 'Light Celebration',
+    caption: '',
   },
   {
     img: '/example-18.webp',
@@ -152,6 +153,6 @@ export const Polaroids: Polroid[] = [
     left: 82,
     index: 9,
     rotate: -6,
-    caption: 'Merry Christmas',
+    caption: '',
   },
 ];
