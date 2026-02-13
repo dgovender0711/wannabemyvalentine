@@ -25,8 +25,7 @@ const Yes = () => {
         <div className="text-center">
           <h1 className="yes-title text-3xl md:text-5xl">Happy Valentine’s Day!</h1>
           <p className="yes-subtitle mt-5 text-base md:text-lg">
-            You get a few “coupons” you can use whenever you want — but each one can only be used once,
-            so choose wisely.
+            You get a few “coupons” you can use whenever you want — so choose wisely.
           </p>
         </div>
 
