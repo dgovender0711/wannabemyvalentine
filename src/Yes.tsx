@@ -2,15 +2,13 @@ import Envelope from './components/Envelope';
 import './Yes.css';
 
 const Yes = () => {
-  // Gifts inside the envelopes
   const messages = [
     'Dessert Run (Sweet Treat Trip)',
-    '574 Cuddles for each day we have been dating',
     'Movie Night of your Choice',
     'Picnic Date of your Choosing'
   ];
 
-  const labels = ['For your random chocolate cravings', 'No phones allowed', 'Even if its a chick flick', 'How cute'];
+  const labels = ['For your random chocolate cravings', 'Even if its a chick flick', 'How cute'];
 
   const envelopes = messages.map((message, index) => (
     <div key={index} className="flex flex-col items-center">

@@ -8,7 +8,6 @@ body {
   font-family: var(--val-font);
 }
 
-/* Page background */
 .home-page {
   background: radial-gradient(
     circle at top,
@@ -21,14 +20,12 @@ body {
   overflow: hidden;
 }
 
-/* Card */
 .home-card {
   background: rgba(255, 255, 255, 0.78);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(15, 23, 42, 0.08);
 }
 
-/* Typography */
 .home-kicker {
   color: rgba(15, 23, 42, 0.65);
   font-weight: 600;
@@ -95,7 +92,6 @@ body {
     0 2px 6px rgba(15, 23, 42, 0.08);
 }
 
-/* Colors */
 .val-btn--yes {
   background: rgba(236, 72, 153, 0.92);
   color: white;
@@ -115,13 +111,11 @@ body {
   background: rgba(148, 163, 184, 1);
 }
 
-/* Fade-out animation */
 .fade-out {
   opacity: 0;
   transform: scale(0.85);
 }
 
-/* Floating hearts */
 .hearts {
   position: absolute;
   inset: 0;
@@ -202,7 +196,6 @@ body {
   }
 }
 
-/* YES celebration */
 .yay {
   animation: yayPop 0.6s ease;
 }

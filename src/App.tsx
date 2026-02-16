@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 function App() {
   const navigate = useNavigate();
 
-  // PERSONALIZE 👇
   const name = "Kerisa";
   const from = "Me";
 

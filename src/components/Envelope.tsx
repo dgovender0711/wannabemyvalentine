@@ -1,9 +1,8 @@
 import { useState } from 'react';
-// Import your CSS here
 
 interface EnvelopeProps {
   id: number;
-  children: React.ReactNode; // Explicitly type the children prop
+  children: React.ReactNode; 
 }
 
 const Envelope: React.FC<EnvelopeProps> = ({ children }) => {
